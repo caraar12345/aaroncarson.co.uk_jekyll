@@ -57,7 +57,8 @@
   @include font-size($navbar-brand-font-size);
   line-height: inherit;
   white-space: nowrap;
-
+  font-family: $navbar-brand-font-family;
+  font-weight: $navbar-brand-font-weight;
   @include hover-focus() {
     text-decoration: none;
   }
