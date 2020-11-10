@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <a class="text-primary" href="/"><h1>{{ site.title }}</h1></a>
+    
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include foot-js.html %}
+
+  </body>
+</html>

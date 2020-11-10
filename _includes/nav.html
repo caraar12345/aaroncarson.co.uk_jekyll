@@ -1,0 +1,7 @@
+<nav>
+  {% for item in site.data.navigation %}
+    <a id="nav-link" href="{{ item.link }}" {% if page.url == item.link %}class="text-success"{% endif %}>
+      {{ item.name }}
+    </a>
+  {% endfor %}
+</nav>
