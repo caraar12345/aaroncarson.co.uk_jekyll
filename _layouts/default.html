@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    {% include head.html %}
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    
-    {% include nav.html %}
 
-    {{ content }}
+<head>
+{% include head.html %}<title>{{ page.title }}</title>
+</head>
 
-    {% include foot-js.html %}
-
-  </body>
+<body>
+{% include nav.html %}
+{{ content }}
+{% include foot-js.html %}
+</body>
 </html>
