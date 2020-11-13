@@ -1,3 +1,7 @@
 $primary: #123456;
-$navbar-brand-font-family: 'Space Mono', monospace;
+$navbar-brand-font-family: Space Mono, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $navbar-brand-font-weight: 700;
+
+.emoji {
+  height:20px;
+}
