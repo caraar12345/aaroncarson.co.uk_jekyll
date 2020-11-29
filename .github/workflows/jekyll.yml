@@ -12,7 +12,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build site
       run: |
-        echo "GitHub" && ls -la ${{ github.workspace }} &&
+        mkdir .jekyll_cache && mkdir _site \
+        chown -R 1000:1000 * \  
+        echo "GitHub" && ls -la ${{ github.workspace }} && \
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll \
         -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
