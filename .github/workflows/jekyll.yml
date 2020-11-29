@@ -13,7 +13,7 @@ jobs:
     - name: Build site
       run: |
         mkdir .jekyll_cache _site && \
-        chmod -R 777 * && \  
+        chmod -R 777 . && \  
         echo "GitHub" && ls -la ${{ github.workspace }} && \
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll \
