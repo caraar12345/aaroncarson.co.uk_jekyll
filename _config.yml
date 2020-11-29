@@ -5,14 +5,12 @@ url: "https://aaroncarson.co.uk" # the base hostname & protocol for your site, e
 twitter_username: acar321
 github_username:  caraar12345
 
+host: 0.0.0.0
+
 # Build settings
 permalink: :title/
 sass:
   sass_dir: assets/css/
-
-collections:
-  authors:
-    output: true
 
 defaults:
   - scope:
@@ -34,6 +32,3 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-gems:
-  - jekyll/twemoji

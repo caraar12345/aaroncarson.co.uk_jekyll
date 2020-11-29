@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
+    <head>
+    {% include head.html %}
+    </head>
 
-<head>
-{% include head.html %}<title>{{ page.title }}</title>
-</head>
+    <body>
+        <div class="h-100 flex-column">
+            {% include nav.html %}
 
-<body>
-<div class="h-100 flex-column">
-{% include nav.html %}
+            <div class="flex-column jumbotron text-center jumbotron-fluid"> 
+                <h1 class="display-4 font-weight-normal">{{ page.title }}</h1>
+            </div>
 
-<div class="flex-column jumbotron text-center jumbotron-fluid"> 
-    <h1 class="display-4 font-weight-normal">{{ page.title }}</h1>
-</div>
-
-<div class="flex-column mx-auto py-4 flex-grow-1 overflow-auto" style="width: 85%">
-{{ content }}
-</div>
-{% include foot-js.html %}
-</div>
-</body>
+            <div class="flex-column mx-auto py-4 flex-grow-1 vertical-center" style="width: 85%">
+                {{ content }}
+            </div>
+            {% include foot-js.html %}
+        </div>
+    </body>
 </html>

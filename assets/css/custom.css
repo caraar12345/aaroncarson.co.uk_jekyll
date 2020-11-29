@@ -1,0 +1,11 @@
+.social-icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icon:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.social-span {
+    margin-left: 1px;
+}

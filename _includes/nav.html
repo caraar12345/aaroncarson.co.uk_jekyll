@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-collapses">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-collapses sticky-top">
     <a class="navbar-brand" href="/">{{ site.title }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,5 +14,12 @@
                 <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
             </li>
             {% endif %} {% endfor %}
+            <li>
+                <span class="nav-link social-span">
+                    <a href="https://twitter.com/acar321"><i class="fab fa-twitter social-icon"></i></a>&nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/aaroncarson"><i class="fab fa-linkedin-in social-icon"></i></a>&nbsp;&nbsp;
+                    <a href="https://github.com/caraar12345"><i class="fab fa-github social-icon"></i></a>
+                </span>
+            </li>
     </div>
 </nav>

@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
-<div class="post_title" style="display:inline;">
-  <h1>{{ page.title }} </h1>
-  <h4>{{ page.date | date_to_string }}</h4>
-</div> 
-<p>
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
+<div class="text-right">
+  <h5>{{ page.date | date_to_string }}</h5>
+</div>
 
+<hr>
 {{ content }}
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="caraar12345/aaroncarson.co.uk_jekyll"
+        issue-term="url"
+        label="utterances"
+        theme="boxy-light"
+        crossorigin="anonymous"
+        async>
+</script>
