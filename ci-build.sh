@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Docker"
+ls -la /srv/jekyll
 jekyll build --trace
 if [ $? -ne 0 ]
 then
