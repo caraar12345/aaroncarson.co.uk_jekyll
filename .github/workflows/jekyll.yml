@@ -1,20 +1,44 @@
-name: Jekyll site CI
+name: Jekyll CI/CD
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:    
+      - main   
 
 jobs:
-  build:
-
+  build_job:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
+    - name: Build site
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        jekyll/builder:latest /bin/bash -c "chmod +x ci-build.sh && ./ci-build.sh"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build
+        
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_job
+    steps:
+    - uses: actions/download-artifact@v1
+      with:
+        name: build
+    - name: "Prepare SSH key and known hosts"
+      # https://github.com/symfony/cli/issues/227#issuecomment-601680974
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.KEY }}" > ~/.ssh/id_ecdsa
+        chmod 600 ~/.ssh/id_ecdsa
+        ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+        echo "Host ${{ secrets.DEPLOY_HOST }}" > ~/.ssh/config
+        echo "  Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
+
+    - name: Run deploy script
+      run: |
+        rsync -rSlh --stats build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/tar
+        ssh -o StrictHostKeyChecking=yes ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}

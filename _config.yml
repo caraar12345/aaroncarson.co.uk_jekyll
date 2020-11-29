@@ -1,9 +1,9 @@
 title: Aaron Carson
 email: hello@aaroncarson.co.uk
 author: Aaron Carson
-url: "https://aaroncarson.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://aaroncarson.co.uk"
 twitter_username: acar321
-github_username:  caraar12345
+github_username: caraar12345
 
 host: 0.0.0.0
 
