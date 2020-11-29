@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Docker"
+echo "Docker - $(id)"
 ls -la /srv/jekyll
 jekyll build --trace
 if [ $? -ne 0 ]
