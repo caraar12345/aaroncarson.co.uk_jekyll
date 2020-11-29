@@ -1,5 +1,5 @@
 #!/bin/bash
-jekyll build
+jekyll build --trace
 if [ $? -ne 0 ]
 then
   exit 1
