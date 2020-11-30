@@ -32,3 +32,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+exclude:
+  - aaroncarson.co.uk.code-workspace
