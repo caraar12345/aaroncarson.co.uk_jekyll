@@ -36,8 +36,7 @@ jobs:
         chmod 600 ~/.ssh/id_ecdsa
         echo "Host ${{ secrets.DEPLOY_HOST }}" > ~/.ssh/config
         echo "    Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
-        ssh-keyscan ${{ secrets.DEPLOY_HOST }} -p ${{ secrets.DEPLOY_PORT }} >> ~/.ssh/known_hosts
-        cat ~/.ssh/known_hosts
+        ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
 
     - name: Run deploy script
       run: |
