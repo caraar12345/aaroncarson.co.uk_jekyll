@@ -30,14 +30,13 @@ jobs:
       with:
         name: build
     - name: "Prepare SSH key and known hosts"
-      # https://github.com/symfony/cli/issues/227#issuecomment-601680974
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.KEY }}" > ~/.ssh/id_ecdsa
+        echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ecdsa
         chmod 600 ~/.ssh/id_ecdsa
         echo "Host ${{ secrets.DEPLOY_HOST }}" > ~/.ssh/config
-        echo "  Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
-        ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+        echo "    Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
+        ssh-keyscan ${{ secrets.DEPLOY_HOST }} -p ${{ secrets.DEPLOY_PORT }} >> ~/.ssh/known_hosts
 
     - name: Run deploy script
       run: |
