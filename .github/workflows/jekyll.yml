@@ -37,6 +37,7 @@ jobs:
         echo "Host ${{ secrets.DEPLOY_HOST }}" > ~/.ssh/config
         echo "    Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
         ssh-keyscan ${{ secrets.DEPLOY_HOST }} -p ${{ secrets.DEPLOY_PORT }} >> ~/.ssh/known_hosts
+        cat ~/.ssh/known_hosts
 
     - name: Run deploy script
       run: |
