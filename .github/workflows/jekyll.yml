@@ -40,6 +40,8 @@ jobs:
         echo "    Port ${{ secrets.DEPLOY_PORT }}" >> ~/.ssh/config
         ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
     - name: Run deploy script
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         rsync -rSlh --stats build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/tar
         ssh -o StrictHostKeyChecking=yes ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}
