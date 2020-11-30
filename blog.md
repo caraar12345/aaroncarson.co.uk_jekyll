@@ -1,5 +1,6 @@
 ---
 title: My occasional blogposts
+image: /assets/images/aaroncarson.jpg
 ---
 
 {% assign psize = site.posts | size %}

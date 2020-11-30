@@ -2,8 +2,10 @@ title: Aaron Carson
 email: hello@aaroncarson.co.uk
 author: Aaron Carson
 url: "https://aaroncarson.co.uk"
-twitter_username: acar321
-github_username: caraar12345
+twitter:
+  username: acar321
+github:
+  username: caraar12345
 
 host: 0.0.0.0
 

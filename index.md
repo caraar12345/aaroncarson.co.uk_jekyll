@@ -1,5 +1,6 @@
 ---
 title: Hi, I'm Aaron.
+image: /assets/images/aaroncarson.jpg
 ---
 
 <div class="row my-auto align-items-center flex-grow-1 overflow-auto flex-row">
