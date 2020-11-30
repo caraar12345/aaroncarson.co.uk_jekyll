@@ -35,3 +35,5 @@ plugins:
 
 exclude:
   - aaroncarson.co.uk.code-workspace
+  - ci-build.sh
+  - ci-deploy.sh
