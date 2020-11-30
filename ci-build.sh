@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Docker - $(id)"
-ls -la /srv/jekyll
 chmod 777 /srv/jekyll
 jekyll build --trace
 if [ $? -ne 0 ]
