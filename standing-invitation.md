@@ -1,6 +1,6 @@
 ---
 title: Standing invitation
-permalink: /contact/standing-invitation
+permalink: /contact/standing-invitation/
 ---
 
 ## What on earth is a standing invitation?

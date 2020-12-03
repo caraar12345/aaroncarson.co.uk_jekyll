@@ -1,5 +1,6 @@
 ---
 title: Contact me
+permalink: /contact/
 image: /assets/images/aaroncarson.jpg
 ---
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
