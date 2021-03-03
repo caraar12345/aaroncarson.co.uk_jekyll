@@ -14,8 +14,8 @@ image: /assets/images/aaroncarson.jpg
 
   If you’d ever like to get in touch with me for whatever reason, I have a [**standing invitation**](/contact/standing-invitation) open, so please do email me at [__hello@aaroncarson.co.uk__](mailto:hello@aaroncarson.co.uk) or [__DM me on Twitter__](https://twitter.com/acar321) 😄
 
-  **Please note: I do not make outbound calls as part of my role at Monzo. If you receive a call claiming to be from 'Aaron Carson at Monzo', hang up immediately. *It is not me.* My role is around the scheduling of our Customer Operations team - I am not part of this team any more and my role doesn't involve contacting customers in any capacity.**
-  **At no time will Monzo unexpectedly call you to request that you move money or to discuss your account. Any callbacks will have been organised prior to the time via email or Monzo Chat.**
+  <sub><sup>**Please note: I do not make outbound calls as part of my role at Monzo. If you receive a call claiming to be from 'Aaron Carson at Monzo', hang up immediately. *It is not me.* My role is around the scheduling of our Customer Operations team - I am not part of this team any more and my role doesn't involve contacting customers in any capacity.**
+  **At no time will Monzo unexpectedly call you to request that you move money or to discuss your account. Any callbacks will have been organised prior to the time via email or Monzo Chat.**</sub></sup>
 
   _I also have a [__GPG key__](https://keys.openpgp.org/vks/v1/by-fingerprint/93BADDC3FE56CDAB908E9096303C76F0807676E2) which you can use if you want to keep it secret_ 🤫  
 </div>
