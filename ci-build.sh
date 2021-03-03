@@ -1,5 +1,5 @@
 #!/bin/bash
-chmod 777 /srv/jekyll
+chmod -R 777 /srv/jekyll
 jekyll build --trace
 if [ $? -ne 0 ]
 then
