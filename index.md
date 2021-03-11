@@ -5,7 +5,7 @@ image: /assets/images/aaroncarson.jpg
 
 <div class="row my-auto align-items-center flex-grow-1 overflow-auto flex-row">
 <div class="d-flex flex-col col-md-4 justify-content-center my-1" markdown="1">
-  ![A picture of Aaron Carson with Tower Bridge in London behind.](/assets/images/aaroncarson.jpg){: style="margin: auto; display: block; width: 80%"}
+  ![A picture of Aaron Carson with Tower Bridge in London behind.](/assets/images/aaroncarson.png){: style="margin: auto; display: block; width: 80%"}
 </div>
 <div class="col-md-8 my-4 lead text-justify" markdown="1">
   Hi! 👋 I’m __Aaron__ (_he/him_). I’m in my third year of studying for a BSc (Hons) degree in [__Cyber Security & Digital Forensics__](https://www.kingston.ac.uk/undergraduate/courses/cyber-security-computer-forensics/) at [__Kingston University London__](https://www.kingston.ac.uk/).
@@ -16,7 +16,8 @@ image: /assets/images/aaroncarson.jpg
 
   _I also have a [__GPG key__](https://keys.openpgp.org/vks/v1/by-fingerprint/93BADDC3FE56CDAB908E9096303C76F0807676E2) which you can use if you want to keep it secret_ 🤫  
 
-  <sup>**Please note: I do not make outbound calls as part of my role at Monzo. If you receive a call claiming to be from 'Aaron Carson at Monzo', hang up immediately. *It is not me.* My role is around the scheduling of our Customer Operations team - I am not part of this team any more and my role doesn't involve contacting customers in any capacity.**
-  **At no time will Monzo unexpectedly call you to request that you move money or to discuss your account. Any callbacks will have been organised prior to the time via email or Monzo Chat.**</sup>
+  ---
+
+  <sup><sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.*** My role surrounds the scheduling of our Customer Operations team, as well as related data analysis. I am no longer part of the Customer Operations team, and my role no longer involves contacting customers **in any capacity**. At no time will Monzo (or any bank) unexpectedly call you to request that you move money or to discuss your account. Any and all callbacks will have been organised prior to the time via email or Monzo Chat.</sub></sup>
 </div>
 </div>
