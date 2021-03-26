@@ -18,6 +18,6 @@ image: /assets/images/aaroncarson.jpg
 
   ---
 
-  <sup><sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.*** My role surrounds the scheduling of our Customer Operations team, as well as related data analysis. I am no longer part of the Customer Operations team, and my role no longer involves contacting customers **in any capacity**. At no time will Monzo (or any bank) unexpectedly call you to request that you move money or to discuss your account. Any and all callbacks will have been organised prior to the time via email or Monzo Chat.</sub></sup>
+  <sup><sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.***</sup></sub> 
 </div>
 </div>
