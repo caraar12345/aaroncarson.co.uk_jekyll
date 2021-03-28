@@ -4,8 +4,14 @@ image: /assets/images/aaroncarson.jpg
 ---
 
 <div class="row my-auto align-items-center flex-grow-1 overflow-auto flex-row">
-<div class="d-flex flex-col col-md-4 justify-content-center my-1" markdown="1">
-  ![A picture of Aaron Carson with Tower Bridge in London behind.](/assets/images/aaroncarson.png){: style="margin: auto; display: block; width: 80%"}
+<div class="d-flex flex-col col-md-4 justify-content-center my-1">
+  <picture style="margin: auto; display: block; width: 80%">
+    <source srcset="/assets/images/{{ aaroncarson.webp | bust_img_cache }}" type="image/webp">
+    <source srcset="/assets/images/{{ aaroncarson.jp2 | bust_img_cache }}" type="image/jp2">
+    <source srcset="/assets/images/{{ aaroncarson.png | bust_img_cache }}" type="image/png">
+    <source srcset="/assets/images/{{ aaroncarson.jpg | bust_img_cache }}" type="image/jpeg">
+    <img src="/assets/images/{{ aaroncarson.png | bust_img_cache }}" alt="A picture of Aaron Carson with Tower Bridge in London behind.">
+  </picture>
 </div>
 <div class="col-md-8 my-4 lead text-justify" markdown="1">
   Hi! 👋 I’m __Aaron__ (_he/him_). I’m in my third year of studying for a BSc (Hons) degree in [__Cyber Security & Digital Forensics__](https://www.kingston.ac.uk/undergraduate/courses/cyber-security-computer-forensics/) at [__Kingston University London__](https://www.kingston.ac.uk/).
@@ -18,6 +24,6 @@ image: /assets/images/aaroncarson.jpg
 
   ---
 
-  <sup><sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.***</sup></sub> 
+  <sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.***</sub> 
 </div>
 </div>
