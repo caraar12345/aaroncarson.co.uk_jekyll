@@ -5,12 +5,12 @@ image: /assets/images/aaroncarson.jpg
 
 <div class="row my-auto align-items-center flex-grow-1 overflow-auto flex-row">
 <div class="d-flex flex-col col-md-4 justify-content-center my-1">
-  <picture style="margin: auto; display: block; width: 80%">
+  <picture>
     <source srcset="/assets/images/aaroncarson.webp?{{ site.time | date: '%s%N' }}" type="image/webp">
     <source srcset="/assets/images/aaroncarson.jp2?{{ site.time | date: '%s%N' }}" type="image/jp2">
     <source srcset="/assets/images/aaroncarson.png?{{ site.time | date: '%s%N' }}" type="image/png">
     <source srcset="/assets/images/aaroncarson.jpg?{{ site.time | date: '%s%N' }}" type="image/jpeg">
-    <img src="/assets/images/aaroncarson.png?{{ site.time | date: '%s%N' }}" alt="A picture of Aaron Carson with Tower Bridge in London behind.">
+    <img style="margin: auto; display: block; width: 80%" src="/assets/images/aaroncarson.png?{{ site.time | date: '%s%N' }}" alt="A picture of Aaron Carson with Tower Bridge in London behind.">
   </picture>
 </div>
 <div class="col-md-8 my-4 lead text-justify" markdown="1">
