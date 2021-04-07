@@ -1,4 +1,4 @@
-name: Jekyll CI/CD
+name: Jekyll (staging)
 
 on:
   push:
@@ -43,5 +43,5 @@ jobs:
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        rsync -avz -e "ssh -o StrictHostKeyChecking=yes" --progress build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/tar
-        ssh -o StrictHostKeyChecking=yes ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.DEPLOY_PATH }}
+        rsync -avz -e "ssh -o StrictHostKeyChecking=yes" --progress build/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.STAGING_DEPLOY_PATH }}/tar
+        ssh -o StrictHostKeyChecking=yes ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.STAGING_DEPLOY_PATH }}
