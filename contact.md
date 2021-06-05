@@ -19,4 +19,6 @@ So my response time is 'best effort' (but I will respond at some point! If it's 
 
 You can also <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/aaroncarson?hide_landing_page_details=1'});return false;">__schedule in a meeting if you like!__</a> _But please only use this if you have to - emailing me is much preferred_ ♥️
 
+Finally, you can find my CV [here](/assets/files/aaroncarsonCV_noPhone.pdf) if my site has intrigued you enough to want to hire me 😄
+
 _I also have a [__GPG key__](https://keys.openpgp.org/vks/v1/by-fingerprint/93BADDC3FE56CDAB908E9096303C76F0807676E2)_ 🤫
