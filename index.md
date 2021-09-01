@@ -18,7 +18,7 @@ image: /assets/images/aaroncarson.jpg
 
   You can also find me working as an __IT Service Desk Analyst__ at the University during the week, and as an __Activity Co-ordinator__ at [__Monzo__](https://monzo.com) on the weekends.
 
-  If you’d ever like to get in touch with me for whatever reason, I have a [**standing invitation**](/contact/standing-invitation) open, so please do email me at [__hello@aaroncarson.co.uk__](mailto:hello@aaroncarson.co.uk) or [__DM me on Twitter__](https://twitter.com/acar321) 😄
+  If you’d ever like to get in touch with me for whatever reason, I have a [**standing invitation**](/contact/standing-invitation) open, so please do email me at [__hello@aaroncarson.co.uk__](mailto:hello@aaroncarson.co.uk) 😄
 
   _I also have a [__GPG key__](https://keys.openpgp.org/vks/v1/by-fingerprint/93BADDC3FE56CDAB908E9096303C76F0807676E2) which you can use if you want to keep it secret_ 🤫  
 
