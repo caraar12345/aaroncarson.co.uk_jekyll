@@ -1,0 +1,1979 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] ring-mqtt.sh: executing... 
+-------------------------------------------------------
+| Ring Device Integration via MQTT                    |
+| Addon for Home Assistant                            |
+|                                                     |
+| Report issues at:                                   |
+| https://github.com/tsightler/ring-mqtt-hassio-addon |
+-------------------------------------------------------
+[cont-init.d] ring-mqtt.sh: exited 0.
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+-------------------------------------------------------
+ring-mqtt.js version: 4.8.1
+Node version v14.17.6
+NPM version 7.17.0
+git version 2.32.0
+-------------------------------------------------------
+Using discovered MQTT Host: core-mosquitto
+Using discovered MQTT Port: 1883
+Using configured MQTT User: ring-mqtt
+Using configured MQTT password: <hidden>
+-------------------------------------------------------
+Running ring-mqtt...
+2021-09-10T14:20:41.685Z ring-mqtt Using configuration file: /data/options.json
+2021-09-10T14:20:41.690Z ring-mqtt Reading latest data from state file: /data/ring-state.json
+2021-09-10T14:20:41.907Z ring-mqtt Attempting connection to Ring API using saved refresh token.
+2021-09-10T14:20:42.708Z ring-mqtt Connection to Ring API successful
+2021-09-10T14:20:42.711Z ring-mqtt Starting connection to MQTT broker...
+2021-09-10T14:20:42.755Z ring-mqtt File /data/ring-state.json saved with updated refresh token.
+2021-09-10T14:20:42.768Z ring-mqtt MQTT connection established, processing locations...
+2021-09-10T14:20:44.643Z ring-mqtt [32m--------------------------------------------------------------------------------[39m
+2021-09-10T14:20:44.643Z ring-mqtt [37mNew location: [39m[32mLocation[39m[36m (02661f96-cb1c-41dc-ab89-2aa2dbebe20d)[39m
+2021-09-10T14:20:44.646Z ring-mqtt [37m  New device: [39m[32mGarage[39m[36m (GARAGE_ID)[39m
+2021-09-10T14:20:44.646Z ring-mqtt [90m              cocoa_camera[39m
+2021-09-10T14:20:44.647Z ring-mqtt [37m  New device: [39m[32mFront Door[39m[36m (FRONTDOOR_ID)[39m
+2021-09-10T14:20:44.647Z ring-mqtt [90m              cocoa_doorbell[39m
+2021-09-10T14:20:44.647Z ring-mqtt [32m--------------------------------------------------------------------------------[39m
+2021-09-10T14:20:44.647Z ring-mqtt Ring location/device data updated, sleeping for 5 seconds.
+2021-09-10T14:20:46.661Z ring-rtsp-server [32m-------------------------------------------------------------------------[39m
+2021-09-10T14:20:46.662Z ring-rtsp-server Starting rtsp-simple-server process...
+2021-09-10T14:20:46.681Z ring-rtsp-server [90m[0m[32mI [0m[0/0] rtsp-simple-server v0.17.3
+2021-09-10T14:20:46.681Z ring-rtsp-server [90m[0m[32mI [0m[0/0] [RTSP] TCP listener opened on 0.0.0.0:8554
+2021-09-10T14:20:46.682Z ring-rtsp-server [90m[0m[32mI [0m[0/0] [API] listener opened on 127.0.0.1:8880
+2021-09-10T14:20:47.672Z ring-rtsp-server Creating RTSP paths for all cameras...
+2021-09-10T14:20:47.693Z ring-rtsp-server [90m[0m[32mI [0m[0/0] reloading configuration (API request)
+2021-09-10T14:20:47.693Z ring-rtsp-server [90m[0m[32mI [0m[0/0] [path GARAGE_ID_live] created
+2021-09-10T14:20:47.715Z ring-rtsp-server [90m[0m[32mI [0m[0/0] reloading configuration (API request)
+2021-09-10T14:20:47.715Z ring-rtsp-server [90m[0m[32mI [0m[0/0] [path FRONTDOOR_ID_live] created
+2021-09-10T14:20:47.815Z ring-rtsp-server [32m-------------------------------------------------------------------------[39m
+2021-09-10T14:20:49.674Z ring-mqtt Publishing new device id: GARAGE_ID
+2021-09-10T14:20:49.676Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:20:49.681Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.683Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:20:49.683Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.684Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:20:49.684Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.685Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:20:49.685Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.685Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:20:49.686Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.688Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:20:49.689Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.689Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:20:49.690Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.694Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:20:49.694Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:20:49.695Z ring-mqtt Publishing new device id: FRONTDOOR_ID
+2021-09-10T14:20:49.695Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:20:49.695Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.695Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:20:49.695Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.696Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:20:49.696Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.696Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:20:49.697Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.697Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:20:49.697Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.697Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:20:49.698Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.698Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:20:49.698Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:49.698Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:20:49.698Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:20:51.695Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status[39m [36monline[39m
+2021-09-10T14:20:51.698Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status[39m [36monline[39m
+2021-09-10T14:20:53.697Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:20:53.697Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:20:53.698Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:20:53.698Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:20:53.699Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:20:53.700Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:20:53.709Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:20:53.718Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:20:53.718Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:20:53.719Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:20:53.719Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:20:53.719Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:20:53.719Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:20:53.721Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:20:53.722Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:20:54.097Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:20:54.099Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:20:54.100Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:20:54.111Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:20:54.112Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:20:54.113Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:20:57.298Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:20:57.320Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:21:19.700Z ring-mqtt Republishing existing device id: GARAGE_ID
+2021-09-10T14:21:19.702Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:21:19.702Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.702Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:21:19.703Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.703Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:21:19.703Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.703Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:21:19.703Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.703Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:21:19.704Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.704Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:21:19.704Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.704Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:21:19.705Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.705Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:21:19.708Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:19.711Z ring-mqtt Republishing existing device id: FRONTDOOR_ID
+2021-09-10T14:21:19.711Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:21:19.712Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.712Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:21:19.712Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.713Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:21:19.713Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.714Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:21:19.714Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.718Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:21:19.718Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.718Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:21:19.719Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.719Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:21:19.720Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:19.720Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:21:19.721Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:23.715Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:21:23.716Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:23.716Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:21:23.716Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:21:23.716Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:21:23.717Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:23.717Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:21:23.718Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:21:23.724Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:23.725Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:21:23.729Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:21:23.729Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:21:23.730Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:23.730Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:21:23.731Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:21:23.732Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:21:23.732Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:21:24.121Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:21:24.122Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:21:24.123Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:21:24.123Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:21:24.124Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:21:24.124Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:21:49.722Z ring-mqtt Republishing existing device id: GARAGE_ID
+2021-09-10T14:21:49.724Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:21:49.724Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.727Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:21:49.727Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.727Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:21:49.728Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.728Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:21:49.728Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.728Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:21:49.729Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.729Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:21:49.729Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.729Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:21:49.729Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.730Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:21:49.730Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:21:49.730Z ring-mqtt Republishing existing device id: FRONTDOOR_ID
+2021-09-10T14:21:49.731Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:21:49.731Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.731Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:21:49.732Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.732Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:21:49.732Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.733Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:21:49.733Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.733Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:21:49.733Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.734Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:21:49.734Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.734Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:21:49.735Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:49.735Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:21:49.735Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:21:53.733Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:21:53.734Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:53.734Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:21:53.735Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:21:53.735Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:21:53.736Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:53.737Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:21:53.737Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:21:53.760Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:53.760Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:21:53.761Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:21:53.761Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:21:53.762Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:21:53.763Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:21:53.763Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:21:53.763Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:21:53.763Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:21:54.115Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:21:54.116Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:21:54.116Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:21:54.165Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:21:54.165Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:21:54.165Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:22:19.736Z ring-mqtt Republishing existing device id: GARAGE_ID
+2021-09-10T14:22:19.737Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:22:19.737Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.738Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:22:19.739Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.739Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:22:19.740Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.745Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:22:19.746Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.750Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:22:19.751Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.752Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:22:19.753Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.753Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:22:19.754Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.755Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:22:19.755Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:19.756Z ring-mqtt Republishing existing device id: FRONTDOOR_ID
+2021-09-10T14:22:19.756Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:22:19.757Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.758Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:22:19.759Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.760Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:22:19.761Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.762Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:22:19.762Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.763Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:22:19.763Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.764Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:22:19.765Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.765Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:22:19.766Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:19.771Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:22:19.771Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:23.759Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:22:23.759Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:23.760Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:22:23.760Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:22:23.760Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:22:23.760Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:23.761Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:22:23.761Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:22:23.772Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:23.772Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:22:23.773Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:22:23.773Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:22:23.773Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:23.774Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:22:23.774Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:22:23.774Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:22:23.775Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:22:24.151Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:22:24.151Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:22:24.151Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:22:24.154Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:22:24.155Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:22:24.156Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:22:49.773Z ring-mqtt Republishing existing device id: GARAGE_ID
+2021-09-10T14:22:49.775Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:22:49.775Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.776Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:22:49.776Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.776Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:22:49.777Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.777Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:22:49.778Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.778Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:22:49.778Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.779Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:22:49.779Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.779Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:22:49.780Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.780Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:22:49.780Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:22:49.780Z ring-mqtt Republishing existing device id: FRONTDOOR_ID
+2021-09-10T14:22:49.780Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:22:49.781Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.781Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:22:49.781Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.781Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:22:49.781Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.781Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:22:49.781Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.782Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:22:49.782Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.782Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:22:49.782Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.784Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:22:49.784Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:49.785Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:22:49.786Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:22:53.784Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:22:53.784Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:53.785Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:22:53.785Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:22:53.785Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:22:53.786Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:53.786Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:22:53.787Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:22:53.791Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:53.798Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:22:53.800Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:22:53.801Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:22:53.802Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:22:53.802Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:22:53.803Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:22:53.803Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:22:53.803Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:22:54.167Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:22:54.168Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:22:54.168Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:22:54.186Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:22:54.189Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:22:54.190Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:23:19.789Z ring-mqtt Republishing existing device id: GARAGE_ID
+2021-09-10T14:23:19.789Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_motion/config
+2021-09-10T14:23:19.789Z ring-mqtt {
+  name: 'Garage Motion',
+  unique_id: 'GARAGE_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.789Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_stream/config
+2021-09-10T14:23:19.790Z ring-mqtt {
+  name: 'Garage Stream',
+  unique_id: 'GARAGE_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.790Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_siren/config
+2021-09-10T14:23:19.790Z ring-mqtt {
+  name: 'Garage Siren',
+  unique_id: 'GARAGE_ID_siren',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/command',
+  icon: 'mdi:alarm-light',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.790Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot/config
+2021-09-10T14:23:19.790Z ring-mqtt {
+  name: 'Garage Snapshot',
+  unique_id: 'GARAGE_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.790Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_snapshot_interval/config
+2021-09-10T14:23:19.791Z ring-mqtt {
+  name: 'Garage Snapshot Interval',
+  unique_id: 'GARAGE_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.791Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_info/config
+2021-09-10T14:23:19.791Z ring-mqtt {
+  name: 'Garage Info',
+  unique_id: 'GARAGE_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.791Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_wireless/config
+2021-09-10T14:23:19.791Z ring-mqtt {
+  name: 'Garage Wireless',
+  unique_id: 'GARAGE_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.791Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/GARAGE_ID_battery/config
+2021-09-10T14:23:19.791Z ring-mqtt {
+  name: 'Garage Battery',
+  unique_id: 'GARAGE_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'GARAGE_ID' ],
+    name: 'Garage',
+    mf: 'Ring',
+    mdl: 'Stick Up Cam'
+  }
+}
+2021-09-10T14:23:19.792Z ring-mqtt Republishing existing device id: FRONTDOOR_ID
+2021-09-10T14:23:19.792Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_motion/config
+2021-09-10T14:23:19.792Z ring-mqtt {
+  name: 'Front Door Motion',
+  unique_id: 'FRONTDOOR_ID_motion',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state',
+  device_class: 'motion',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.792Z ring-mqtt HASS config topic: homeassistant/switch/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_stream/config
+2021-09-10T14:23:19.792Z ring-mqtt {
+  name: 'Front Door Stream',
+  unique_id: 'FRONTDOOR_ID_stream',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/command',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes',
+  icon: 'mdi:cctv',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.792Z ring-mqtt HASS config topic: homeassistant/binary_sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_ding/config
+2021-09-10T14:23:19.792Z ring-mqtt {
+  name: 'Front Door Ding',
+  unique_id: 'FRONTDOOR_ID_ding',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state',
+  device_class: 'occupancy',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes',
+  icon: 'mdi:doorbell-video',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.792Z ring-mqtt HASS config topic: homeassistant/camera/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot/config
+2021-09-10T14:23:19.793Z ring-mqtt {
+  name: 'Front Door Snapshot',
+  unique_id: 'FRONTDOOR_ID_snapshot',
+  topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.793Z ring-mqtt HASS config topic: homeassistant/number/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_snapshot_interval/config
+2021-09-10T14:23:19.793Z ring-mqtt {
+  name: 'Front Door Snapshot Interval',
+  unique_id: 'FRONTDOOR_ID_snapshot_interval',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state',
+  command_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/command',
+  min: 10,
+  max: 604800,
+  icon: 'hass:timer',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.793Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_info/config
+2021-09-10T14:23:19.793Z ring-mqtt {
+  name: 'Front Door Info',
+  unique_id: 'FRONTDOOR_ID_info',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'timestamp',
+  value_template: '{{ value_json["lastUpdate"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  icon: 'mdi:information-outline',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.793Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_wireless/config
+2021-09-10T14:23:19.793Z ring-mqtt {
+  name: 'Front Door Wireless',
+  unique_id: 'FRONTDOOR_ID_wireless',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'signal_strength',
+  unit_of_measurement: 'dBm',
+  value_template: '{{ value_json["wirelessSignal"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:19.794Z ring-mqtt HASS config topic: homeassistant/sensor/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/FRONTDOOR_ID_battery/config
+2021-09-10T14:23:19.794Z ring-mqtt {
+  name: 'Front Door Battery',
+  unique_id: 'FRONTDOOR_ID_battery',
+  state_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state',
+  device_class: 'battery',
+  unit_of_measurement: '%',
+  state_class: 'measurement',
+  value_template: '{{ value_json["batteryLevel"] | default }}',
+  json_attributes_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes',
+  availability_topic: 'ring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/status',
+  payload_available: 'online',
+  payload_not_available: 'offline',
+  device: {
+    ids: [ 'FRONTDOOR_ID' ],
+    name: 'Front Door',
+    mf: 'Ring',
+    mdl: 'Doorbell Gen 2'
+  }
+}
+2021-09-10T14:23:23.794Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/siren/state[39m [36mOFF[39m
+2021-09-10T14:23:23.795Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:23:23.795Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:23:23.796Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:23:23.796Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:23:23.796Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/motion/attributes[39m [36m{"lastMotion":1631282189,"lastMotionTime":"2021-09-10T13:56:29Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:23:23.796Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:23:23.796Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot_interval/state[39m [36m600[39m
+2021-09-10T14:23:23.813Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:23:23.813Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/state[39m [36mOFF[39m
+2021-09-10T14:23:23.813Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/stream/attributes[39m [36m{"status":"inactive"}[39m
+2021-09-10T14:23:23.813Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/state[39m [36mOFF[39m
+2021-09-10T14:23:23.813Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/motion/attributes[39m [36m{"lastMotion":1631273615,"lastMotionTime":"2021-09-10T11:33:35Z","personDetected":true,"motionDetectionEnabled":true}[39m
+2021-09-10T14:23:23.814Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/state[39m [36mOFF[39m
+2021-09-10T14:23:23.814Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/ding/attributes[39m [36m{"lastDing":1631274044,"lastDingTime":"2021-09-10T11:40:44Z"}[39m
+2021-09-10T14:23:23.814Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:23:23.816Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/snapshot_interval/state[39m [36m3600[39m
+2021-09-10T14:23:24.188Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:23:24.189Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:23:24.189Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:23:24.208Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:23:24.208Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:23:24.208Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:25:45.016Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:25:45.017Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:25:45.017Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:25:45.037Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:25:45.038Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:25:45.038Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:30:45.013Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:30:45.015Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:30:45.015Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:30:45.019Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:30:45.021Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:30:45.026Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:30:48.263Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
+2021-09-10T14:35:45.046Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:35:45.047Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:35:45.047Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:35:45.048Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:35:45.048Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:35:45.048Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:40:45.048Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/info/state[39m [36m{"batteryLevel":"71","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T13:57:02Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-56,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/GARAGE_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.garage_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:40:45.049Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-56}[39m
+2021-09-10T14:40:45.049Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/battery/attributes[39m [36m{"batteryLevel":"71"}[39m
+2021-09-10T14:40:45.052Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/info/state[39m [36m{"batteryLevel":"100","firmwareStatus":"Up to Date","lastUpdate":"2021-09-10T12:50:58Z","wirelessNetwork":"Unifi-2G","wirelessSignal":-67,"stream_Source":"rtsp://RTSP_USER:RTSP_PASS@03cabcc9-ring-mqtt:8554/FRONTDOOR_ID_live","still_Image_URL":"https://homeassistant:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}"}[39m
+2021-09-10T14:40:45.052Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/wireless/attributes[39m [36m{"wirelessNetwork":"Unifi-2G","wirelessSignal":-67}[39m
+2021-09-10T14:40:45.053Z ring-mqtt [32m[Front Door][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/FRONTDOOR_ID/battery/attributes[39m [36m{"batteryLevel":"100"}[39m
+2021-09-10T14:40:48.246Z ring-mqtt [32m[Garage][39m [34mring/02661f96-cb1c-41dc-ab89-2aa2dbebe20d/camera/GARAGE_ID/snapshot/image[39m [36m<binary_image_data>[39m
