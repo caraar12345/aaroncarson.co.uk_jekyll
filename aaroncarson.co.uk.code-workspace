@@ -3,12 +3,5 @@
 		{
 			"path": "."
 		}
-	],
-	"settings": {
-		"scss.validate": false,
-		"files.associations": {
-			"*.html": "liquid",
-			"*.scss": "liquid"
-	}
-	}
+	]
 }
