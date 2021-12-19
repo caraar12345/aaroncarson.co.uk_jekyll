@@ -14,16 +14,12 @@ image: /assets/images/aaroncarson.jpg
   </picture>
 </div>
 <div class="col-md-8 my-4 lead text-justify" markdown="1">
-  Hi! 👋 I’m __Aaron__ (_he/him_). I’ve just finished studying for a BSc (Hons) degree in [__Cyber Security & Digital Forensics__](https://www.kingston.ac.uk/undergraduate/courses/cyber-security-computer-forensics/) at [__Kingston University London__](https://www.kingston.ac.uk/).
+  Hi! 👋 I’m __Aaron__ (_he/him_).
 
-I'm currently working as an __Activity Co-ordinator__ at [__Monzo__](https://monzo.com) at the weekend, and some personal projects (_homelab, anyone?_) during the weeks 😄 
+  I'm a __Preliminary Security Operational Analyst__ at [__Monzo__](https://monzo.com), and I work on my personal projects (_such as my homelab - blog posts incoming at some point maybe_) whenever I get a bit of free time. This came from my time at Kingston University London, where I completed and received an upper second class degree with honours in Cyber Security and Computer Forensics.
 
   If you’d ever like to get in touch with me for whatever reason, I have a [**standing invitation**](/contact/standing-invitation) open, so please do email me at [__hello@aaroncarson.co.uk__](mailto:hello@aaroncarson.co.uk) 😄
 
   _I also have a [__GPG key__](https://keys.openpgp.org/vks/v1/by-fingerprint/93BADDC3FE56CDAB908E9096303C76F0807676E2) which you can use if you want to keep it secret_ 🤫  
-
-  ---
-
-  <sub>Please note: I **do not** make outbound calls to customers as part of my role at Monzo. If you receive a call claiming to be from '`Aaron Carson at Monzo`', hang up immediately. ***It is not me.***</sub> 
 </div>
 </div>
